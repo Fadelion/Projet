@@ -1,0 +1,659 @@
+/* Fichier de mise en forme de la page HTML */
+
+/* Réinitialiser les styles par défaut
+    définis par les navigateurs */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Définir la police de caractères par défaut */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  padding-top: 60px; /* Ajouté pour compenser la navbar fixe */
+}
+
+/* ======= En-tête et menu de navigation ======= */
+/* En-tête */
+header {
+  background: #061a3fe1;
+  color: #fff;
+}
+
+/* Barre de navigation */
+.navbar {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;
+  gap: 2rem;*/
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0; /* Ajouté pour s'assurer que la barre commence au bord gauche */
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0; /* Ajouté pour s'assurer que la barre commence au bord gauche */
+  width: 100%;
+  background: #061a3fe1;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Nom Prénom */
+.nomprenom {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /*margin-right: 10rem;*/
+}
+
+/* Prénom en couleur */
+.nomprenom span {
+  color: #f2b143;
+}
+
+/* Liens de navigation */
+.nav-liens {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  /*margin-left: 25rem;*/
+}
+
+/* Liens de navigation */
+.nav-liens li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: large;
+}
+
+/* Liens de navigation actifs */
+.nav-liens li a.actif {
+  color: #f2b143;
+  font-weight: bold;
+}
+/* Liens de navigation survolés */
+.nav-liens li a:hover {
+  color: #f2b143;
+}
+
+/* Menu hamburger (pour mobile) */
+.hamburger {
+  display: none; /* caché par défaut sur desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+/* Barre du menu hamburger (pour téléphones et les petits écrans) */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* ======= Section Principal ======= */
+.principal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Contenu de la section principal */
+.principal-contenu {
+  flex: 1;
+  min-width: 300px;
+  margin-right: 1rem;
+}
+
+/* Titre h1 de principal */
+.principal-contenu h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Couleur du prénom dans titre h1 */
+.principal-contenu h1 span {
+  color: #f2b143;
+}
+
+/* Bouton principal et bouton Voir (de la section A Propos) */
+.btn-principal, .btn-projet {
+  background: #328075;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: large;
+}
+
+/* Effet lors de survol de bouton "Voir mes projets"
+ ou du bouton "Voir" ou du bouton "Envoyer"
+ */
+.btn-principal:hover, .btn-projet:hover {
+  background: #22d6c4;
+}
+
+/* Image principale illustrative */
+.principal-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+/* Ajustement de l'image */
+.principal-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0 auto; /* Centrer l'image */
+  display: block;
+}
+
+.credit-lien {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.credit-lien:hover {
+  color: #1f6455;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* ======= Section A propos ======= */
+.a-propos {
+  background: #f5f5f5; /* Couleur de fond claire */
+  color: #333; /* Couleur de texte sombre */
+  padding: 2rem 1rem;
+}
+
+body.dark-mode .a-propos {
+  background: #1e1e1e; /* Couleur de fond sombre pour le mode sombre */
+  color: #f5f5f5; /* Couleur de texte claire */
+}
+
+/* Titre A Propos */
+.a-propos h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+/* Contenu de la section A Propos */
+.a-propos-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/* Texte de présentation */
+.a-propos-texte {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Image de profil */
+.a-propos-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.a-propos-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Bouton secondaire (Télécharger mon CV) */
+.btn-secondaire {
+  background: #333;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+/* Effet lors de survol de bouton "Télécharger mon CV" */
+.btn-secondaire:hover {
+  background: #22d6c4;
+}
+
+/* ======= Section Mes Projets ======= */
+/* Ajustement de la section Projets */
+.Projets {
+  padding: 8rem 1cm;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: wheat; /* Couleur de fond claire */
+    color: #333; /* Couleur de texte sombre */
+}
+
+/* Titre Mes Projets */
+.Projets h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+/* Contenu de la section Mes Projets */
+.Projets-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Mise en forme de chaque projet */
+.Projet {
+  background: #cdd3cd;
+  border: 1px solid #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 3%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Titre de chaque projet */
+.Projet h3 {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
+/* Description de chaque projet */
+.Projet p {
+  margin-bottom: 1rem;
+}
+
+/* ======= Section Mes Compétences ======= */
+/*  Ajustement de la section Comptéences*/
+.Competences {
+  background: whitesmoke; /* Couleur de fond claire */
+  color: #333; /* Couleur de texte sombre */
+  padding: 8rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+body.dark-mode .Competences {
+  background: #1e1e1e; /* Couleur de fond sombre pour le mode sombre */
+  color: #f5f5f5; /* Couleur de texte claire */
+}
+
+/* Titre Mes Compétences */
+.Competences h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+/* Contenu de la section Mes Compétences */
+.Competences-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Titre de chaque groupe de compétences */
+.Competences h3 {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+/* Soft Skills et Hard Skills */
+.soft-skills, .hard-skills {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Mise en forme de chaque compétence */
+.competence {
+  margin-bottom: 1rem;
+}
+
+/* Texte au niveau de chaque compétence */
+.competence p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Barre de compétence */
+.barre-competence {
+  background: #ccc;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Niveau de compétence */
+.niveau-competence {
+  background: steelblue;
+  height: 100%;
+}
+
+/* ======= Section Contact ======= */
+.Contact {
+    background: #000;
+    color: #fff;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Styles pour les titres */
+.Contact h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.Contact h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+/* Mettre de la couleur dans certains éléments de titre */
+.mettrecouleur {
+    color: #358b83;
+}
+
+/* Formulaire de contact */
+.formulaire-contact {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Disposition nom-prénom */
+.nom-prenom {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.nom-prenom .groupe-formulaire {
+    flex: 1;
+    display: block;
+}
+
+/* Champs de formulaire */
+.Contact input,
+.Contact textarea {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Labels au-dessus des champs */
+.groupe-formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.groupe-formulaire label {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Bouton d'envoi du formulaire */
+.btn-envoyer {
+    align-self: center;
+    background-color: #11443d;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Bouton d'envoi du formulaire survolé */
+.btn-envoyer:hover {
+    background-color: #16d850;
+}
+
+/* Textarea spécifique */
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Largeur des conteneurs */
+.contenu, .contenu2 {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Correction des sections pour éviter les débordements */
+.principal, .a-propos, .Projets, .Competences, .Contact {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Empêche le défilement horizontal */
+  box-sizing: border-box; /* S'assure que padding et border sont inclus dans width */
+}
+
+/* ======= Footer (pied de page) ======= */
+footer {
+  background: #f5f5f5; /* Couleur de fond claire */
+  color: #333; /* Couleur de texte sombre */
+  padding: 1rem;
+  text-align: center;
+}
+
+body.dark-mode footer {
+  background: #1e1e1e; /* Couleur de fond sombre pour le mode sombre */
+  color: #f5f5f5; /* Couleur de texte claire */
+}
+
+body.dark-mode footer a {
+  color: #f2b143; /* Couleur des liens dans le pied de page en mode sombre */
+}
+
+/* Texte dans pied de page */
+footer p {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+/* Liens dans pied de page */
+footer a {
+  color: #1f6455;
+  text-decoration: none;
+}
+
+/* ======= Médias Queries ======= */
+
+/* Ajustement pour les écran moyens et petits */
+/* Pour les tablettes: */
+@media only screen and (max-width:800px) {
+  .navbar {
+    /*width: 80%;*/
+    padding: 0.5rem 1rem;
+  }
+  .principal .a-propos .Projets .Competences {
+    width: 100%;
+  }
+  .nav-liens {
+    display: none;
+    flex-direction: column;
+    background: #061a3fe1;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre pour plus de clarté */
+  }
+
+  .nav-liens.actif {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .principal {
+    flex-direction: column;
+  }
+
+  .principal-contenu,
+  .principal-image {
+    margin: 0;
+    text-align: center;
+  }
+
+  .a-propos-contenu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .a-propos-texte,
+  .a-propos-image {
+    max-width: 100%;
+  }
+}
+
+/* Pour les téléphones: */
+@media only screen and (max-width:500px) {
+  .principal .a-propos .Projets .Competences {
+    width: 100%;
+    padding: 1rem; /* Réduire le padding pour les petits écrans */
+  }
+  .Projets, .Competences {
+    padding: 4rem 1rem; /* Réduction du padding vertical */
+  }
+  
+  .nom-prenom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Correction du formulaire de contact pour les petits écrans (de largueur maximale de 600 pixels) */
+@media only screen and (max-width: 600px) {
+  .nom-prenom {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* ======= Dark Mode ======= */
+/* Bouton Dark Mode */
+.dark-mode-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Mode sombre */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .navbar {
+  background: #1e1e1e;
+}
+
+body.dark-mode .nav-liens li a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .nav-liens li a.actif,
+body.dark-mode .nav-liens li a:hover {
+  color: #f2b143;
+}
+
+body.dark-mode .btn-principal,
+body.dark-mode .btn-projet,
+body.dark-mode .btn-secondaire {
+  background: #333;
+  color: #fff;
+}
+
+body.dark-mode .btn-principal:hover,
+body.dark-mode .btn-projet:hover,
+body.dark-mode .btn-secondaire:hover {
+  background: #555;
+}
+
+/* Style pour les boutons principaux */
+.btn-principal {
+  display: inline-block;
+  text-decoration: none; /* Supprime le soulignement des liens */
+  background-color: #1f6455; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: #145a40; /* Couleur au survol */
+}
